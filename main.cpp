@@ -1,13 +1,12 @@
 #include <iostream>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
+#include "SFML/Window.hpp"
+#include "SFML/Graphics.hpp"
+#include "SFML/System.hpp"
 #include <math.h>
 #include "Lista2D.hpp"
 #include "Fisica.hpp"
 
-//caminho arquivo
-#define caminho ""
+
 #define width 800
 #define heith 600
 
@@ -26,7 +25,6 @@ int main() {
     sf::Texture laser;
     sf::Sprite fundao;
     int aclfrontal = 0;
-    //int aclre = 0;
     Lista2D vetores;
 
     int FoiAtirado = 0;
@@ -70,7 +68,6 @@ int main() {
     tiro.setOrigin(6,24);
     tiro.setTexture(&laser);
     tiro.setTextureRect(sf::IntRect(230,90,60,128));
-    //tiro.setPosition(x,y);
 
 
     while(window.isOpen() && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)){
@@ -88,8 +85,6 @@ int main() {
         y = 0;
         EstaPressionado = 0;
 
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) x-=15;
-        //if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) x+=15;
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)){
             if(aclfrontal<100)
                 aclfrontal++;
@@ -98,14 +93,6 @@ int main() {
             if(aclfrontal>0)
                 aclfrontal--;
         }
-
-        /*if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)){
-            if(aclre<100)
-                aclre++;
-        }else{
-            if(aclre>0)
-                aclre--;
-        }*/
 
         if(aclfrontal)
         {
@@ -120,7 +107,6 @@ int main() {
         angle = (int)angle % 360;
 
         y -= aclfrontal;
-        //y += aclre;
 
         Atualiza(&vetores, y, angle);
 
