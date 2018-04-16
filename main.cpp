@@ -1,7 +1,7 @@
 #include <iostream>
-#include "SFML/Window.hpp"
-#include "SFML/Graphics.hpp"
-#include "SFML/System.hpp"
+#include "SFML-2.4.2/include/SFML/Window.hpp"
+#include "SFML-2.4.2/include/SFML/Graphics.hpp"
+#include "SFML-2.4.2/include/SFML/System.hpp"
 #include <math.h>
 #include "Lista2D.hpp"
 #include "Fisica.hpp"
